@@ -34,5 +34,9 @@
     &__text {
       @include fluid-type(430px, 1440px, 16px, 24px);
     }
+
+    > svg {
+      overflow: visible;
+    }
   }
 }
