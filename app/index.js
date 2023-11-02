@@ -1,11 +1,16 @@
 import '../styles/index.scss';
 import Lenis from '@studio-freight/lenis';
+import Home from './pages/Home';
 
 class App {
   constructor() {
     this._createLenis();
-
+    this._createHome();
     this._render();
+  }
+
+  _createHome() {
+    this.home = new Home();
   }
 
   _createLenis() {
