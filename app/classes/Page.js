@@ -1,10 +1,12 @@
 import TextReveal from '../animations/TextReveal';
 import Button from '../animations/Button';
+import ParallaxImage from '../animations/ParallaxImage';
 
 export default class Page {
   constructor() {
     this._createTextReveals();
     this._createButtons();
+    this._createParallaxImages();
   }
 
   _createTextReveals() {
@@ -28,6 +30,20 @@ export default class Page {
     buttons.forEach((button) => {
       new Button({
         element: button,
+      });
+    });
+  }
+
+  _createParallaxImages() {
+    const images = [
+      ...document.querySelectorAll('[data-animation="parallax-image"]'),
+    ];
+
+    if (!images) return;
+
+    images.forEach((image) => {
+      new ParallaxImage({
+        imageSection: image,
       });
     });
   }
